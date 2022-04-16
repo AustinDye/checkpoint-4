@@ -5,16 +5,16 @@ import { Pop } from "../Utils/Pop.js";
 
 async function _drawTodo(){
     const todo = ProxyState.myList
-    let template = todo.Template
-    document.getElementById('myList').innerHTML = template
+    //*let template = todo.Template
+    //*document.getElementById('myList').innerHTML = template
+    todoServices.getAllTodo()
     
 }
 
 
 export class TodoController {
     constructor(){
-        ProxyState.on('myList', _drawTodo)
-
+        _drawTodo()
     }
     async setTodo(data){
         try {
@@ -56,6 +56,6 @@ export class TodoController {
 
     drawTodo(){
         _drawTodo()
-     
+       
     }
 }

@@ -16,6 +16,16 @@ export class TodoServices {
         const newCar = new Todo(res.data)
         ProxyState.myList = [newCar, ...ProxyState.myList]
       }
+
+      async getAllTodo(){
+          const res = await todoApi.get('')
+          console.log(res);
+          res.data.forEach(todo => {
+            const newTodo = new Todo(todo)
+            ProxyState.task = [newTodo, ...ProxyState.task]
+        });
+        console.log( ProxyState.task );
+      }
 }
 
 export const todoServices = new TodoServices()
