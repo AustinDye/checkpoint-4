@@ -26,14 +26,13 @@ export class TodoController {
         }
     }  
 
-    async handleSubmit(id) {
+    async handleSubmit() {
         try {
           event.preventDefault()
           /**@type {HTMLFormElement} */
           // @ts-ignore
           const formElem = event.target
           const formData = {
-            id: formElem.id,
             user: formElem.user.value,
             complete: formElem.complete.value,
             description: formElem.description.value,

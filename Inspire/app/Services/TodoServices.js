@@ -8,7 +8,7 @@ export class TodoServices {
     async setTodo(formData){
         const res = await todoApi.post('',formData)
         let newTodo = new Todo(res.data)
-        ProxyState.lists = [...ProxyState.lists, newTodo]
+        ProxyState.todoLists = [...ProxyState.todoLists, newTodo]
         ProxyState.myList = newTodo
     }
     async addTodo(formData) {

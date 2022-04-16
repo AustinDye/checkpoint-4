@@ -1,9 +1,9 @@
-import { Todo } from "./Models/Todo.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
-  lists = []
+  todoLists = []
+  task = []
   myList = null
 }
 

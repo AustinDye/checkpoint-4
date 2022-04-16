@@ -28,11 +28,19 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-3">
+          
           <button class="btn" onclick="app.todoController.setTodo()">wow!</button>
           <div id="myList"></div>
           <button class="fab btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-todo-modal" onclick="app.todoController.openForm()">➕</button>
         </div>
       </div>
+    </div>
+    <div class="card justify-content-center">
+      <h4>TodoList</h4>
+      <span class="d-flex"> 
+          <input type="checkbox" name="task" id="task">
+          <h4>task1</h4>
+      </span>
     </div>
   </main>
   <footer class="bg-dark text-light">
@@ -55,6 +63,9 @@
       </div>
     </div>
   </div>
+  
+
+ 
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
