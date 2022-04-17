@@ -2,17 +2,35 @@
 
 #todo-list{
     bottom: 0;
-    width: 95%;
+    margin-left: 25%;
+    width: 70%;
     position: absolute;
     color: rgb(254, 222, 222);
     background-color: rgba(0, 0, 0, 0.771);
 }
+input{
+    background-color: rgba(64, 64, 64, 0.086);
+    border-color: rgba(0, 0, 0, 0);
+    color: antiquewhite;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    
+   
+}
+input:focus{
+    border-color: rgba(0, 0, 0, 0.285);
+    outline-color: black;
+    
+}
 button{
+   background-color: rgba(159, 141, 141, 0);
+ 
+   border: none;
+   color: rgba(0, 0, 0, 0);
+   box-shadow: none;
    
 }
-.btn{
-   
-}
+
 .mdi{
     color: rgb(255, 255, 255);
 }
@@ -51,4 +69,5 @@ body{
 
 
 }
+
 

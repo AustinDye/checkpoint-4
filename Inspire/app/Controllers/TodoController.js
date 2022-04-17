@@ -5,9 +5,9 @@ import { Pop } from "../Utils/Pop.js";
 
 async function _drawTodo(){
     let template = ''
-    ProxyState.task.forEach(t => template += /*html*/ `<span class="fs-6"> <button class="btn" onclick="app.todoController.deleteTodo('${t.id}')"><i class="mdi   ${t.completed ? "mdi-circle-slice-8" : "mdi-circle-outline"} "></i></button>
+    ProxyState.task.forEach(t => template += /*html*/ `<span class=""> <button class="" onclick="app.todoController.deleteTodo('${t.id}')"><i class="mdi   ${t.completed ? "mdi-circle-slice-8" : "mdi-circle-outline"} "></i></button>
     ${t.description}
-    <button class="btn" onclick="app.todoController.deleteTodo('${t.id}')">
+    <button class="" onclick="app.todoController.deleteTodo('${t.id}')">
     <i class="mdi mdi-close take-away"></i>
     </button>
     </span>`)
