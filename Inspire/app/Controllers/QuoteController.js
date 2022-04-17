@@ -5,7 +5,7 @@ async function _drawQuote(){
     let quote = ProxyState.quote.content
     let credit = ProxyState.quote.author
     document.getElementById('quote').innerHTML = `
-    <h4>"${quote}"</h4>
+    <h5>"${quote}"</h5>
           <p>${credit}</p>
     `
 }

@@ -10,7 +10,19 @@ async function _drawImage(){
     url(${img.largeImgUrl})
     `
     document.getElementById('img-credit').innerHTML = `
-    <span class="d-flex"><i class="mdi mdi-camera mx-2"></i><h5>${img.tags}</h5></span><p>${img.author}</p>
+
+
+    <div class="row">
+        <div class="col-3">
+            <i class="mdi mdi-camera fs-3 mx-3 my-4"></i>
+        </div>
+        <div class="col-9">
+        <h5>"${img.tags}"</h5>
+        
+        <p>${img.author}</p>
+        </div>
+    </div>
+    
     
     
           

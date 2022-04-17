@@ -7,10 +7,10 @@ async function _drawWeather(){
     let clouds = weather.clouds.all
 
    document.getElementById('weather').innerHTML = `
-   <div class="d-block">
+   <div class="d-block mx-2 my-2">
    <span class="d-flex flex-row">
-            <i class="mdi mdi-weather-cloudy fs-2"></i>
-            <h1>${temp}</h1>
+            <i class="mdi mdi-weather-cloudy fs-3"></i>
+            <h2 class="my-2 mx-1">${temp}</h2>
           </span>
           <h5>Boise</h5>
     </div>

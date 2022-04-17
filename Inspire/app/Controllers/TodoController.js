@@ -1,11 +1,12 @@
 import { ProxyState } from "../AppState.js";
 import { getTodoForm } from "../assets/TodoForm.js";
+import { todoApi } from "../Services/AxiosServices.js";
 import { todoServices } from "../Services/TodoServices.js";
 import { Pop } from "../Utils/Pop.js";
 
 async function _drawTodo(){
     let template = ''
-    ProxyState.task.forEach(t => template += /*html*/ `<span class=""> <button class="" onclick="app.todoController.deleteTodo('${t.id}')"><i class="mdi   ${t.completed ? "mdi-circle-slice-8" : "mdi-circle-outline"} "></i></button>
+    ProxyState.task.forEach(t => template += /*html*/ `<span class=""> <button class="" onclick="app.todoController.checkTodo('${t.id}')"><i class="mdi   ${t.completed ? "mdi-checkbox-intermediate" : "mdi-checkbox-blank-outline"} "></i></button>
     ${t.description}
     <button class="" onclick="app.todoController.deleteTodo('${t.id}')">
     <i class="mdi mdi-close take-away"></i>
@@ -60,10 +61,17 @@ export class TodoController {
       
     }
 
+    async checkTodo(id){
+        await todoServices.completeTodo(id)
+        _drawTodo()
+    }
+
     async deleteTodo(id){
         await todoServices.removeTodo(id)
 
     }
+
+    
 
 
 }
