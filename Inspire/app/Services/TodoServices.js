@@ -27,20 +27,15 @@ export class TodoServices {
       }
 
       async completeTodo(id){
-        const res = await todoApi.get('' +  id)
-        console.log(res);
-        const checkTodo = new Todo(res.data)
+        const checkTodo = ProxyState.task.find(t => t.id == id)
         console.log(checkTodo.completed);
-        if (checkTodo.completed !== false) {
-          checkTodo.completed = false
-          
-        } else {
-          checkTodo.completed = true
-        }
+        checkTodo.completed = !checkTodo.completed
         console.log(checkTodo.completed);
         const index = ProxyState.task.findIndex(t => t.id == checkTodo.id)
         ProxyState.task.splice(index, 1, checkTodo)
         ProxyState.task = ProxyState.task
+        const res = await todoApi.put('' + checkTodo.id, checkTodo)
+        console.log(res);
       }
     }
 
