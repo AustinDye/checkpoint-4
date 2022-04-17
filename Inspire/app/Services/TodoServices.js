@@ -8,14 +8,9 @@ export class TodoServices {
     async setTodo(formData){
         const res = await todoApi.post('',formData)
         let newTodo = new Todo(res.data)
-        ProxyState.todoLists = [...ProxyState.todoLists, newTodo]
+        ProxyState.task = [...ProxyState.task, newTodo]
         ProxyState.myList = newTodo
     }
-    async addTodo(formData) {
-        const res = await todoApi.post('myList', formData)
-        const newCar = new Todo(res.data)
-        ProxyState.myList = [newCar, ...ProxyState.myList]
-      }
 
       async getAllTodo(){
           const res = await todoApi.get('')
@@ -25,6 +20,10 @@ export class TodoServices {
             ProxyState.task = [newTodo, ...ProxyState.task]
         });
         console.log( ProxyState.task );
+      }
+      async removeTodo(id){
+        await todoApi.delete('' + id)
+        ProxyState.task =  ProxyState.task.filter(t => t.id !== id)
       }
 }
 

@@ -1,1 +1,54 @@
-/* BASIC STYLES HERE */
+
+
+#todo-list{
+    bottom: 0;
+    width: 95%;
+    position: absolute;
+    color: rgb(254, 222, 222);
+    background-color: rgba(0, 0, 0, 0.771);
+}
+button{
+   
+}
+.btn{
+   
+}
+.mdi{
+    color: rgb(255, 255, 255);
+}
+
+.take-away{
+    color: rgba(250, 235, 215, 0.102);
+}
+
+.take-away:hover{
+    color: rgba(201, 117, 7, 0.899);
+    
+}
+
+
+body{
+   background-image: url("https://dtzulyujzhqiu.cloudfront.net/homeoregoncoast2654/images/1617139844_sNtT0qzS10Sbq4ECMn146o0hvvoxLJMD6rGsl8WZ.jpeg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: rgb(255, 226, 226);
+}
+
+.thing{
+    height: 78vh;
+}
+
+#time{
+    font-size: 10em;
+    text-align: center;
+    top:20%;
+    position: absolute;
+   
+}
+
+#quote{
+    bottom: 0;
+
+
+}
+

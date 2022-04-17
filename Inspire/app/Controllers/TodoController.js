@@ -4,17 +4,25 @@ import { todoServices } from "../Services/TodoServices.js";
 import { Pop } from "../Utils/Pop.js";
 
 async function _drawTodo(){
-    const todo = ProxyState.myList
-    //*let template = todo.Template
-    //*document.getElementById('myList').innerHTML = template
-    todoServices.getAllTodo()
+    let template = ''
+    ProxyState.task.forEach(t => template += /*html*/ `<span class="fs-6"> <button class="btn" onclick="app.todoController.deleteTodo('${t.id}')"><i class="mdi   ${t.completed ? "mdi-circle-slice-8" : "mdi-circle-outline"} "></i></button>
+    ${t.description}
+    <button class="btn" onclick="app.todoController.deleteTodo('${t.id}')">
+    <i class="mdi mdi-close take-away"></i>
+    </button>
+    </span>`)
+    document.getElementById('todo-item').innerHTML = template
     
 }
 
 
 export class TodoController {
     constructor(){
-        _drawTodo()
+        
+        todoServices.getAllTodo()
+        ProxyState.on('task', _drawTodo)
+        ProxyState.on('myList', _drawTodo)
+        
     }
     async setTodo(data){
         try {
@@ -26,36 +34,37 @@ export class TodoController {
         }
     }  
 
-    async handleSubmit() {
+    async handleSubmit(id) {
         try {
           event.preventDefault()
           /**@type {HTMLFormElement} */
           // @ts-ignore
           const formElem = event.target
           const formData = {
-            user: formElem.user.value,
-            complete: formElem.complete.value,
             description: formElem.description.value,
         }
-        this.setTodo(formData)
-        formElem.reset()
+        if (id == 'undefined') {
+            await todoServices.setTodo(formData)
+          } else {
+            formData.id = id
+            await todoServices.setTodo(formData)
+          }
+          formElem.reset()
         } catch (error){
             console.error('[ADD_TODO_FORM_ERROR]', error)
             Pop.toast(error.message, 'error')
         }
+      
+    
         
-      // @ts-ignore
-      bootstrap.Modal.getOrCreateInstance(document.getElementById('add-todo-modal')).hide()
       
     }
 
-    openForm(){
-        
-        document.getElementById('add-modal-form-slot').innerHTML = getTodoForm()
+    async deleteTodo(id){
+        await todoServices.removeTodo(id)
+
     }
 
-    drawTodo(){
-        _drawTodo()
-       
-    }
+
 }
+
