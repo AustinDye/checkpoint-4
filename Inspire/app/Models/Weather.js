@@ -5,19 +5,33 @@ export class Weather{
         this.temp = data.main.temp
         this.tempC = Math.floor(data.main.temp) - 273
         this.tempF = Math.floor(this.tempC * 9/5) + 32
-        this.clouds = data.main.clouds
+        this.clouds = data.clouds.all
         this.isC = true
+        this.cloudy = 'mdi-weather-cloudy'
+        this.sunny = 'mdi-white-balance-sunny'
+       
     }
 
     get Template(){
-        const temp = this.isC ? this.tempC : this.tempF;
+        let icon = ''
+
+        if(this.clouds < 70){
+            icon = this.sunny
+        }
+        if(this.clouds >= 70){
+            icon = this.cloudy
+        }
+
+        const temp = this.isC ? this.tempC : this.tempF
+
         return /*html*/ `
-        <div class="d-block mx-2 my-2 btn" onclick="app.weatherController.changeTemp()">
+        <div class="d-block mx-2 my-3 theWeather" onclick="app.weatherController.changeTemp()">
             <span class="d-flex flex-row">
-                <i class="mdi mdi-weather-cloudy fs-3"></i>
-                <h2 class="my-2 mx-1" id="temp">${temp}</h2>
+                <i class="mdi ${icon} fs-3"></i>
+                <h2 class=" mx-1" id="temp">${temp}</h2>
+                <p id="temp-type"></p>
             </span>
-            <h5>Boise</h5>
+            <h5 class="">Boise</h5>
         </div>
         `
     }

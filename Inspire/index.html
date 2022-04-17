@@ -8,7 +8,7 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Righteous&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -20,11 +20,11 @@
 <body>
   <header class="sticky-top">
     <div class="row">
-      <div class="col-4">
-      </div>
       <div class="col-4"></div>
-      <div class="col-4">
+      <div class="col-5"></div>
+      <div class="col-3">
         <div class="container d-flex flex-row-reverse" id="weather">
+          <!--weather goes here-->
         </div>
       </div>
     </div>
@@ -32,34 +32,28 @@
   </header>
 
   <main>
+
     <div class="container-fluid">
       <div class="row thing">
-       <div class="col-3 position-relative">
-
-
-       </div>
+       <div class="col-3 position-relative"></div>
        <div class="col-6 position-relative">
          <div class="container" id="time">
-
+           <!--time goes here-->
          </div>
-
-
-
        </div>
+
        <div class="col-3 position-relative">
-         
-        <div class=""  id="todo-list">
-          <div class="mx-3 mt-4">
-            <h4>Today</h4>
-            <div id="todo-item" class=" d-flex flex-column">
-            </div>
-         </div>
-     
-        <form onsubmit="app.todoController.handleSubmit()">
-          <label for="description"></label><br>
-          <input type="text" class="" id="description" name="description" placeholder="New Task">
-        </form>
-    
+          <div class=""  id="todo-list">
+            <div class="mx-3 mt-4 text-center">
+              <h4 id="date"></h4>
+              <div id="todo-item" class=" d-flex flex-column text-start">
+              <!--todos go here-->
+              </div>
+              <form onsubmit="app.todoController.handleSubmit()">
+                <label for="description"></label>
+                <input type="text" class="" id="description" name="description" placeholder="New Task">
+              </form>
+          </div>
         </div>
        </div>
       </div>

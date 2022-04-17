@@ -12,7 +12,7 @@ export class Pop {
     * -----------------------------------
     * {@link https://sweetalert2.github.io/#configuration|Check out Sweet Alerts}
   */
-  static async confirm(title = 'Are you sure?', text = "You won't be able to revert this!", icon = 'warning', confirmButtonText = 'Yes, delete it!') {
+  static async confirm(title = 'Delete Task?', text = "", icon = 'warning', confirmButtonText = 'Delete') {
     try {
       // @ts-ignore
       const res = await Swal.fire({
@@ -20,8 +20,8 @@ export class Pop {
         text: text,
         icon: icon,
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#36454f',
+        cancelButtonColor: '#F47174',
         confirmButtonText: confirmButtonText
       })
       if (res.isConfirmed) {

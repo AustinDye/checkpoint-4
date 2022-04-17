@@ -2,17 +2,17 @@
 
 #todo-list{
     bottom: 0;
-    margin-left: 25%;
-    width: 70%;
+    margin-left: 43%;
+    width: 60%;
     position: absolute;
-    color: rgb(254, 222, 222);
+    color: white;
     background-color: rgba(0, 0, 0, 0.771);
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Francois One', sans-serif;
 }
 input{
     background-color: rgba(64, 64, 64, 0.086);
     border-color: rgba(0, 0, 0, 0);
-    color: antiquewhite;
+    color: white;
     margin-left: 10%;
     margin-bottom: 5%;
     
@@ -25,16 +25,16 @@ input:focus{
 }
 button{
    background-color: rgba(159, 141, 141, 0);
- 
    border: none;
    color: rgba(0, 0, 0, 0);
    box-shadow: none;
    
 }
-
-.mdi{
-    color: rgb(255, 255, 255);
+.cam-icon{
+    color: rgba(191, 191, 191, 0.364);
 }
+
+
 
 .take-away{
     color: rgba(250, 235, 215, 0.102);
@@ -46,14 +46,16 @@ button{
 }
 
 
+main{
+    font-family: 'Francois One', sans-serif;
+}
 body{
    background-image: url("https://dtzulyujzhqiu.cloudfront.net/homeoregoncoast2654/images/1617139844_sNtT0qzS10Sbq4ECMn146o0hvvoxLJMD6rGsl8WZ.jpeg");
    background-repeat: no-repeat;
-   background-size: cover;
-   color: rgb(255, 226, 226);
+   background-size:cover;
+   color: white;
    
-   
-   
+   max-width: 98%;
 }
 
 .thing{
@@ -65,12 +67,13 @@ body{
     text-align: center;
     top:20%;
     position: absolute;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Righteous', cursive;
    
 }
 
 #quote{
     bottom: 0;
+    font-family: 'Francois One', sans-serif;
 }
 
 
@@ -78,12 +81,15 @@ body{
     color: rgba(0, 0, 0, 0);
 }
 
-#q-credit:hover{
-    color: antiquewhite;
+#q-text:hover + #q-credit{
+    color: white;
     transition: 500ms;
 }
 
-#q-text:hover + #q-credit{
-    color: antiquewhite;
-    transition: 500ms;
+.theWeather:hover{
+    cursor: pointer;
+}
+
+.todo-icon{
+    color: white;
 }
