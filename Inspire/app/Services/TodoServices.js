@@ -27,11 +27,9 @@ export class TodoServices {
       }
 
       async completeTodo(id){
-        const checkTodo = ProxyState.task.find(t => t.id == id)
-        console.log(checkTodo.completed);
+        const index = ProxyState.task.findIndex(t => t.id == id)
+        const checkTodo = ProxyState.task[index]
         checkTodo.completed = !checkTodo.completed
-        console.log(checkTodo.completed);
-        const index = ProxyState.task.findIndex(t => t.id == checkTodo.id)
         ProxyState.task.splice(index, 1, checkTodo)
         ProxyState.task = ProxyState.task
         const res = await todoApi.put('' + checkTodo.id, checkTodo)

@@ -15,7 +15,6 @@ export class WeatherController {
     changeTemp(){
         ProxyState.weather.isC = !ProxyState.weather.isC
         console.log(ProxyState.weather);
-        _drawWeather()
-        
+        ProxyState.weather = ProxyState.weather
     }
 }
