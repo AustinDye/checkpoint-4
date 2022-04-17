@@ -7,7 +7,7 @@
     position: absolute;
     color: white;
     background-color: rgba(0, 0, 0, 0.771);
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Anek Bangla', sans-serif;
 }
 input{
     background-color: rgba(64, 64, 64, 0.086);
@@ -15,8 +15,6 @@ input{
     color: white;
     margin-left: 10%;
     margin-bottom: 5%;
-    
-   
 }
 input:focus{
     border-color: rgba(0, 0, 0, 0.285);
@@ -50,11 +48,11 @@ main{
     font-family: 'Francois One', sans-serif;
 }
 body{
-   background-image: url("https://dtzulyujzhqiu.cloudfront.net/homeoregoncoast2654/images/1617139844_sNtT0qzS10Sbq4ECMn146o0hvvoxLJMD6rGsl8WZ.jpeg");
+   background-image: none;
    background-repeat: no-repeat;
    background-size:cover;
+   background-color: black;
    color: white;
-   
    max-width: 98%;
 }
 
@@ -79,11 +77,15 @@ body{
 
 #q-credit{
     color: rgba(0, 0, 0, 0);
-}
-
-#q-text:hover + #q-credit{
-    color: white;
     transition: 500ms;
+}
+#q-text:hover {
+    cursor: help;
+}
+#q-text:hover + #q-credit{
+    color: rgba(255, 255, 255, 0.797);
+    transition: 500ms;
+    
 }
 
 .theWeather:hover{
